@@ -27,7 +27,9 @@ defmodule PhoenixTools.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhoenixTools do
-  #   pipe_through :api
-  # end
+  scope "/api", PhoenixTools do
+    pipe_through :api
+
+    resources "reviews", ReviewController
+  end
 end
